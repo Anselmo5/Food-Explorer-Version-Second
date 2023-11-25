@@ -1,6 +1,7 @@
 const express = require('express')
 
 const routes = express.Router()
+
 const users = [{
     id:1,
     name: 'Anselmo',
@@ -22,3 +23,5 @@ routes.post('/login', (req,res) =>{
         return res.status(401).json({message: 'Dados Invalidos'})
     }
 })
+
+module.exports = routes

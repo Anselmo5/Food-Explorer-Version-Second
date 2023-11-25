@@ -1,16 +1,44 @@
 import React from 'react'
 import './cadastrar.css'
-import footerexport from '../assets/Group 5946.png'
-const [email,setEmail] = useState('')
-const [password,setPassword] = useState('')
 import { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-const handleLogin = async (e) =>{
-  e.preventDafault
 
-}
-const cadastrar = () => {
+const Cadastrar = () => {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate()
+
+  const handleLogin = async (e) => {
+      e.preventDefault();
+      navigate('/home')
+      console.log(email, password);
+
+      try {
+          const response = await axios.post('http://localhost:3000/login',
+              JSON.stringify({email, password}),
+              {
+                  headers: { 'Content-Type': 'application/json' }
+              }            
+          );
+
+          console.log(response.data);
+          setUser(response.data);
+
+      } catch (error) {
+          if (!error?.response) {
+              setError('Erro ao acessar o servidor');
+          } else if (error.response.status == 401) {
+              setError('Usuário ou senha inválidos');
+          }
+      }
+
+  };
 
 
   return (
@@ -47,11 +75,11 @@ const cadastrar = () => {
                       </div>
 
                       <div className='btnfaixas'>                                                     
-                        <button></button>
+                        <button onClick={(e) => handleLogin(e)}>Cadastrar</button>
                       </div>
 
                       <div className='alingtextst'>
-                       <a></a>
+                       <Link></Link>
                       </div>
                 </form>
           </div>
@@ -61,4 +89,4 @@ const cadastrar = () => {
   )
 }
 
-export default cadastrar
+export default Cadastrar

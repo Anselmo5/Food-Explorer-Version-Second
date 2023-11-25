@@ -1,38 +1,43 @@
 import React from 'react'
 import './Login.css'
 import { useState } from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
 const Login = () => {
 
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
-  const [error,setErro] = useState(false)
+  const [error,setError] = useState(false)
   const [user,setUser] = useState(null)
-  const navigate = useNavigate
+  const navigate = useNavigate()
 
 
-  const handleLogin = async (e) =>{
-    e.preventDafault
+  const handleLogin = async (e) => {
+    e.preventDefault();
     navigate('/home')
-    try{
-        const response = await axios.post('http://localhost:3000/login', 
-        JSON.stringify({email,password}),
-        {
-          headers:{'Content-Type': 'application/json'}
-        }
-        
-      );
-      setUser(response.data)
-      
-    } catch(error){
-        if(!error.response){
-          setErro(alert("erro"))
-        } else if(error.response.status == 401){
-            setErro(alert('Usuario ou senha Invalidos'))
+    console.log(email, password);
+
+    try {
+        const response = await axios.post('http://localhost:3000/login',
+            JSON.stringify({email, password}),
+            {
+                headers: { 'Content-Type': 'application/json' }
+            }            
+        );
+
+        console.log(response.data);
+        setUser(response.data);
+
+    } catch (error) {
+        if (!error?.response) {
+            setError('Erro ao acessar o servidor');
+        } else if (error.response.status == 401) {
+            setError('Usuário ou senha inválidos');
         }
     }
-  };
+
+};
+
 
   return (
     
@@ -69,7 +74,7 @@ const Login = () => {
           </div>
 
           <div className='alingtext'>
-           <a href='cadastrar'>op</a>
+            <Link to='/cadastrar'>oiz</Link>
           </div>
     </form>
 </div>
