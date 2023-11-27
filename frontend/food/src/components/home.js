@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <div>
-       <h2> Olá {user} </h2>
+       <h2>  </h2>
     </div>
   )
 }

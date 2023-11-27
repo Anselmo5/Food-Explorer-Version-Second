@@ -12,13 +12,13 @@ const Cadastrar = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     // Validar se o email e senha foram preenchidos
     if (!email || !password) {
       setError('Preencha todos os campos');
       return;
-    } 
-
+    }
+  
     try {
       const response = await axios.post(
         'http://localhost:3000/login',
@@ -27,10 +27,12 @@ const Cadastrar = () => {
           headers: { 'Content-Type': 'application/json' },
         }
       );
-
+  
       console.log(response.data);
       setUser(response.data.user);
-      navigate('/home');
+  
+      // Redirect to the page specified in the response
+      navigate(response.data.redirect);
     } catch (error) {
       if (!error?.response) {
         setError('Erro ao acessar o servidor');
@@ -39,6 +41,7 @@ const Cadastrar = () => {
       }
     }
   };
+  
 
   return (
     <div>

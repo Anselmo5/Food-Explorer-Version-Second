@@ -1,6 +1,6 @@
 import React from 'react'
 
-const adm = () => {
+const Adm = () => {
   return (
     <div>
        oii
@@ -8,4 +8,4 @@ const adm = () => {
   )
 }
 
-export default adm
+export default Adm

@@ -8,6 +8,7 @@ import App from "./App";
 import "./index.css";
 import Cadastrar from './components/cadastrar'
 import Home from "./components/home";
+import Adm from "./components/adm";
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
     path: "/home",
     element: <Home/>,
   },
+  {
+    path: "/adm",
+    element: <Adm/>,
+  },
+
 
 ]);
 
