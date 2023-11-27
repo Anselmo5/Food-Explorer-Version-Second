@@ -19,14 +19,14 @@ const users = [
     name: 'Anselmo',
     email: 'Anselmo@gmail.com',
     password: '1234',
-    page: '/home', // Set the page for this user
+    page: './home', // Set the page for this user
   },
   {
     id: 2,
     name: 'Bruno',
     email: 'Brunobandeira@gmail.com',
     password: '1234',
-    page: '/adm', // Set the page for this user
+    page: './adm', // Set the page for this user
   },
 ];
 
