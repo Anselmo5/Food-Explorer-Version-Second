@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './cadastrar.css';
 import { useNavigate, Link } from 'react-router-dom';
+import footerexport from '../assets/Group 5946.png'
 import axios from 'axios';
 
 const Cadastrar = () => {
@@ -46,7 +47,9 @@ const Cadastrar = () => {
   return (
     <div>
       <div className='alings'>
-        <div className='alingimga'></div>
+        <div className='alingimg'>
+              <img src={footerexport} alt="" />
+          </div>
         <form className=' form'>
           <h2 className='texformatst'>Crie sua conta</h2>
           <div className='faixas'>
@@ -85,7 +88,7 @@ const Cadastrar = () => {
           </div>
 
           <div className='alingtext'>
-            <Link to='/cadastrar'>oiz</Link>
+            <Link to='/cadastrar'>Fazer cadastrastro</Link>
           </div>
         </form>
       </div>

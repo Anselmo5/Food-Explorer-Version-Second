@@ -96,7 +96,7 @@
     flex-direction: column;
   }
 
-  .alingtext p{
+  .alingtext a{
     margin-top: 10px;
     color: #ffffff;
     transition: all 1s;

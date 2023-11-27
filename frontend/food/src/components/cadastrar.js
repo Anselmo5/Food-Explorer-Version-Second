@@ -2,6 +2,7 @@ import React from 'react'
 import './Login.css'
 import { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
+import footerexport from '../assets/Group 5946.png'
 import axios from 'axios'
 const Login = () => {
 
@@ -14,9 +15,9 @@ const Login = () => {
   return (
     
     <div className='aling'>
-    <div className='alingimg'>
-     
-    </div>
+   <div className='alingimg'>
+              <img src={footerexport} alt="" />
+          </div>
     <form className=' forms'>
         <h2 className='texformats'>Crie sua conta </h2>
           <div className='faixa'>
@@ -46,7 +47,7 @@ const Login = () => {
           </div>
 
           <div className='alingtext'>
-            <Link to='/cadastrar'>oiz</Link>
+            <Link to='/'>Já tenho conta</Link>
           </div>
     </form>
 </div>
