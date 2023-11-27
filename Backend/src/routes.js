@@ -1,17 +1,12 @@
 const express = require('express');
-const session = require('express-session');
+const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 
 const routes = express.Router();
 
-// Middleware for session
-routes.use(session({
-  secret: 'your-secret-key',
-  resave: false,
-  saveUninitialized: true,
-}));
-
 routes.use(bodyParser.json());
+
+const secretKey = 'your-secret-key';
 
 const users = [
   {
@@ -35,30 +30,41 @@ routes.post('/login', (req, res) => {
   const user = users.find((user) => user.email === email && user.password === password);
 
   if (user) {
-    // Store user information in the session
-    req.session.user = user;
-    return res.status(200).json({ redirect: user.page });
+    // Gerar um token JWT
+    const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
+
+    return res.status(200).json({ token, redirect: user.page });
   } else {
     return res.status(401).json({ message: 'Invalid credentials' });
   }
 });
 
-// Middleware to check if the user is authenticated
+// Middleware para verificar se o usuário está autenticado
 function isAuthenticated(req, res, next) {
-  if (req.session.user) {
-    return next();
+  const token = req.headers.authorization;
+
+  if (token) {
+    // Verificar o token JWT
+    jwt.verify(token, secretKey, (err, decoded) => {
+      if (err) {
+        return res.status(401).json({ message: 'Unauthorized' });
+      } else {
+        req.userId = decoded.userId;
+        return next();
+      }
+    });
   } else {
     return res.status(401).json({ message: 'Unauthorized' });
   }
 }
 
-// Example protected route
-routes.get('/dashboard1', isAuthenticated, (req, res) => {
+// Exemplo de rota protegida
+routes.get('/home', isAuthenticated, (req, res) => {
   res.status(200).json({ message: 'Welcome to Dashboard 1!' });
 });
 
-// Example protected route
-routes.get('/dashboard2', isAuthenticated, (req, res) => {
+// Exemplo de rota protegida
+routes.get('/adm', isAuthenticated, (req, res) => {
   res.status(200).json({ message: 'Welcome to Dashboard 2!' });
 });
 
