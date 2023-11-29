@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import "./index.css";
-import Cadastrar from './components/cadastrar'
 import Home from "./components/home";
 import Adm from "./components/adm";
+import Login from "./components/Login";
 
 
 const router = createBrowserRouter([
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
     element: <App/>,
   },
   {
-    path: "/cadastrar",
-    element: <Cadastrar/>,
+    path: "/login",
+    element: <Login/>,
   },
   {
     path: "/home",

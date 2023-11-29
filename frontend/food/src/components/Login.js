@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import './cadastrar.css';
+import './Login.css';
 import { useNavigate, Link } from 'react-router-dom';
 import footerexport from '../assets/Group 5946.png'
 import axios from 'axios';
 
-const Cadastrar = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -88,7 +88,7 @@ const Cadastrar = () => {
           </div>
 
           <div className='alingtext'>
-            <Link to='/cadastrar'>Fazer cadastrastro</Link>
+            <Link to='/'>Criar uma conta</Link>
           </div>
         </form>
       </div>
@@ -96,4 +96,4 @@ const Cadastrar = () => {
   );
 };
 
-export default Cadastrar;
+export default Login;

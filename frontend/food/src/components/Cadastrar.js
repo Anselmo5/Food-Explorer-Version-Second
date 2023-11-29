@@ -1,10 +1,10 @@
 import React from 'react'
-import './Login.css'
+import './cadastrar.css'
 import { useState } from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 import footerexport from '../assets/Group 5946.png'
 import axios from 'axios'
-const Login = () => {
+const Cadastrar = () => {
 
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
@@ -47,11 +47,11 @@ const Login = () => {
           </div>
 
           <div className='alingtext'>
-            <Link to='/'>Já tenho conta</Link>
+            <Link to='/login'>Já tenho conta</Link>
           </div>
     </form>
 </div>
   )
 }
 
-export default Login
+export default Cadastrar

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
 
-.alings{
+.aling{
   display:flex;
   justify-content: space-between;
   align-items: center;
@@ -11,7 +11,7 @@
 }
 
 
-.alingimga img{
+.alingimg img{
     margin: 10px;
     padding: 10px;  
     width: 70%;
@@ -19,11 +19,11 @@
     margin-left: 100px;
   }
 
-  .alings{
+  .aling{
     height: 100svh;
   }
   
-  .form{
+  .forms{
     background: var(--dark-dark-700, #001119);
     padding:64px;
     width: calc(100% - 10px);
@@ -33,14 +33,14 @@
     margin-right:50px;
   }
 
-  .texformatst{
+  .texformats{
     font-family: 'Alata', sans-serif;
     font-size: 32px;
     text-align: center;
     color: var(--light-light-100, #FFF);
   }
 
-  .faixas{
+  .faixa{
     display: flex;
     justify-content: center;
     align-items:flex-start;
@@ -48,14 +48,14 @@
     margin-top: 40px;
   }
 
-  .btnfaixas{
+  .btnfaixa{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
 
-  .inpfaixas {
+  .inpfaixa {
     padding: 12px 14px;
     margin-top: 10px; 
     width:90% ;
@@ -63,50 +63,50 @@
     background-color:#0D1D25;
     color: #7C7C8A;
     border-radius: 3px;
-    border: 2px solid; 
 
   }
 
 
-  .btnfaixas button{
-    width:290px;
+
+  .btnfaixa button{
+    width:287px;
     height: auto;
     border: none;
     margin-top: 20px;
     padding: 12px 32px;
     border-radius: 5px;
     background-color: #750310;
+    text-decoration: none;
     color: #fff;
     font-family: 'Alata', sans-serif;
     font-weight: bolder;
-    text-decoration:none ;
     font-size: 14px;
-    
     
   }
 
 
-  .texfaixas{
+  .texfaixa{
     color: #FFF;
   }
 
-  .alingtextst{
+  .alingtext{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
 
-  .alingtextst p{
+  .alingtext a{
     margin-top: 10px;
-    color: #FFF;
+    color: #ffffff;
+    transition: all 1s;
   }
 
-  .alingtextst a{
+  .alingtext a{
     text-decoration: none;
   }
 
-  .alingtextst p:hover{
+  .alingtext p:hover{
     color: #ff0522;
     transition: all 1s;
   }
