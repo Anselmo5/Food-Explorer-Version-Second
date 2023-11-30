@@ -11,8 +11,18 @@ import comida4 from '../assets/comidacard4.png'
 import comida5 from '../assets/comidacard5.png'
 import comida6  from '../assets/comidacard6.png'
 import saida from '../assets/sair.png'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+   const handlelogout = async (e) =>{
+    e.preventDefault();
+    navigate('/');
+    setUser(null)
+
+   }
   return (
     <div>
        <nav>
@@ -23,6 +33,9 @@ const Home = () => {
                 <input className='inp' placeholder='Busque por pratos ou ingredientes'></input>
               </div>
               <button>Pedidos(0)</button>
+              <div className='imgclick'>
+                <img src={saida} onClick={handlelogout}/>
+              </div>
           </div>
        </nav>
 
