@@ -1,17 +1,32 @@
 import React from 'react'
 import logoadm from '../assets/Frame.png'
-import logo from '../assets/Polygon 1.png'
-import logo2 from '../assets/pngegg 1.png'
-import { Link } from 'react-router-dom'
-import edite from '../assets/editar.png'
-import comidacard from '../assets/comidacard.png'
-import comidacard2 from '../assets/comidacard2.png'
-import comidacard3 from '../assets/comidacard3.png'
+import saida from '../assets/sair.png'
+import lupa from '../assets/lupa.png'
 import './adm.css'
+import { useNavigate } from 'react-router-dom'
 const Adm = () => {
+
+  const navigate = useNavigate();
+
+  const handlelogout = async (e) =>{
+   e.preventDefault();
+   navigate('/');
+  }
   return (
     <div>
-      
+      <nav>
+          <div className='alingcontaineradm'>
+              <img src={logoadm}/>
+              <div className='inpiconadm'>
+                <button>  <img src={lupa}/></button>
+                <input className='inpsdm' placeholder='Busque por pratos ou ingredientes'></input>
+              </div>
+              <button>Novo prato</button>
+              <div className='imgclickadm'>
+                <img src={saida} onClick={handlelogout}/>
+              </div>
+          </div>
+       </nav>
     </div>
   )
 }
