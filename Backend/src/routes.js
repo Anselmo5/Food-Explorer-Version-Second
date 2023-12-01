@@ -8,20 +8,20 @@ routes.use(bodyParser.json());
 
 const secretKey = 'your-secret-key';
 
-const users = [
+let users = [
   {
     id: 1,
     name: 'Anselmo',
     email: 'Anselmo@gmail.com',
     password: '1234',
-    page: '/home', // Set the page for this user
+    page: '/home',
   },
   {
     id: 2,
     name: 'Bruno',
     email: 'Brunobandeira@gmail.com',
     password: '1234',
-    page: '/adm', // Set the page for this user
+    page: '/adm',
   },
 ];
 
@@ -30,7 +30,6 @@ routes.post('/login', (req, res) => {
   const user = users.find((user) => user.email === email && user.password === password);
 
   if (user) {
-    // Gerar um token JWT
     const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
 
     return res.status(200).json({ token, redirect: user.page });
@@ -39,33 +38,26 @@ routes.post('/login', (req, res) => {
   }
 });
 
-// Middleware para verificar se o usuário está autenticado
-function isAuthenticated(req, res, next) {
-  const token = req.headers.authorization;
+routes.post('/create-user', (req, res) => {
+  const { nome, email, senha } = req.body;
 
-  if (token) {
-    // Verificar o token JWT
-    jwt.verify(token, secretKey, (err, decoded) => {
-      if (err) {
-        return res.status(401).json({ message: 'Unauthorized' });
-      } else {
-        req.userId = decoded.userId;
-        return next();
-      }
-    });
-  } else {
-    return res.status(401).json({ message: 'Unauthorized' });
+  if (users.some((user) => user.email === email)) {
+    return res.status(400).json({ message: 'Email already in use' });
   }
-}
 
-// Exemplo de rota protegida
-routes.get('/home', isAuthenticated, (req, res) => {
-  res.status(200).json({ message: 'Welcome to Dashboard 1!' });
+  const newUser = {
+    id: users.length + 1,
+    name: nome,
+    email: email,
+    password: senha,
+    page: '/adm',
+  };
+
+  users.push(newUser);
+
+  return res.status(201).json({ message: 'User created successfully', user: newUser });
 });
 
-// Exemplo de rota protegida
-routes.get('/adm', isAuthenticated, (req, res) => {
-  res.status(200).json({ message: 'Welcome to Dashboard 2!' });
-});
+// Restante do código...
 
 module.exports = routes;
