@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
 *{
   padding: 0;
   margin: 0;
@@ -69,6 +71,50 @@ nav{
   width: 38px;
 }
 
+.containeraling{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 5px;
+}
+
+.container{
+  background:  linear-gradient(180deg, #091E26 0%, #00131C 100%);
+  border-radius: 5px;
+  width: 70vw;
+  height: 30vh;
+  margin-top: 200px;
+  
+}
+
+.contcontainer{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.contcontainer img{
+  width: 400px;
+  margin-top: -60px;
+}
+
+.contcontainer h2{
+  font-size:40px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+ 
+}
+
+.contcontainer p{
+  font-size: 16fpx;
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+
+ 
+}
+
 
 
 @media screen and (max-width: 1119px) {
@@ -80,6 +126,20 @@ nav{
   .alingcontainer input {
     width: 100%; 
   }
+
+  .container{
+    background:  linear-gradient(180deg, #091E26 0%, #00131C 100%);
+    width: 100%;
+    height: 30vh;
+    margin-top: 400px;
+    padding: 10px;
+  }
+
+  .contcontainer img{
+    width: 45%;
+    margin-top: -65px;
+  }
+  
 }
 
 

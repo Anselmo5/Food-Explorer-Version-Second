@@ -2,6 +2,7 @@ import React from 'react'
 import logoadm from '../assets/Frame.png'
 import saida from '../assets/sair.png'
 import lupa from '../assets/lupa.png'
+import logo2 from '../assets/pngegg 1.png'
 import './adm.css'
 import { useNavigate } from 'react-router-dom'
 const Adm = () => {
@@ -27,6 +28,18 @@ const Adm = () => {
               </div>
           </div>
        </nav>
+
+       <div className='containeralingadm'>
+          <div className='containeradm'>
+               <div className='contcontaineradm'>
+                  <img src={logo2}/>
+                    <div>
+                    <h2>Sabores inigualáveis</h2>
+                  <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
+                    </div>
+               </div>
+          </div>
+       </div>
     </div>
   )
 }
