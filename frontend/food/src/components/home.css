@@ -16,7 +16,8 @@ nav{
 footer{
   width: 100%;
   background: #00111A;
-  padding: 24px;
+  position: absolute;
+  padding: 2px;
 }
 .alingcontainer{
   display: flex;
@@ -115,9 +116,19 @@ footer{
 .contcontainer p{
   font-size: 16fpx;
   font-family: 'Roboto', sans-serif;
-  color: #fff;
+  color: #fff; 
+}
 
- 
+.alingfooter{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.alingfooter h3{
+  color: #fff;
+  font-family: Roboto;
 }
 
 /* cards */
