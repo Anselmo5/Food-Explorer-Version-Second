@@ -4,6 +4,7 @@ import axios from 'axios';
 import './cadastrar.css';
 import footerexport from '../assets/Group 5946.png';
 
+
 const Cadastrar = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -39,7 +40,7 @@ const Cadastrar = () => {
         <img src={footerexport} alt="" />
       </div>
       <form className="forms" onSubmit={handleSubmit}>
-        {/* Restante do seu formulário */}
+      <h2 className='texformatst'>Crie sua conta</h2>
         <div className="faixa">
           <label htmlFor="nome" className="texfaixa">
             Seu Nome

@@ -51,7 +51,7 @@ const Login = () => {
               <img src={footerexport} alt="" />
           </div>
         <form className=' form'>
-          <h2 className='texformatst'>Crie sua conta</h2>
+          <h2 className='texformatst'>Faça login</h2>
           <div className='faixas'>
             <label htmlFor='nome' className='texfaixa'>
               Email
