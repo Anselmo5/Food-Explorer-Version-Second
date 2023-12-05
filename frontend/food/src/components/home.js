@@ -44,14 +44,24 @@ const Home = () => {
     slidesToScroll: 3
   };
 
+  const filteredCards = cards.filter((card) =>
+  card.nome.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+);
+
+
   return (
     <div>
        <nav>
           <div className='alingcontainer'>
               <img src={footerexport}/>
               <div className='inpicon'>
-                <button>  <img src={lupa}/></button>
-                <input className='inp' placeholder='Busque por pratos ou ingredientes'></input>
+              <input
+                className='inp'
+                placeholder='Busque por pratos ou ingredientes'
+                value={this.state.searchTerm}
+                onChange={(e) => this.setState({ searchTerm: e.target.value })}
+              />
+
               </div>
               <button>Pedidos(0)</button>
               <div className='imgclick'>
