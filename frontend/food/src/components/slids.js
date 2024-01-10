@@ -1,13 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import './home.css'
-import axios from 'axios';
-import footerexport from '../assets/Group 5946.png'
-import food from '../assets/foodexplorer.png'
-import lupa from '../assets/lupa.png'
-import logo from '../assets/Polygon 1.png'
-import logo2 from '../assets/pngegg 1.png'
-import { Link } from 'react-router-dom'
-import coração from '../assets/coracao.png'
+import React from 'react'
+import './slids.css'
 import comida1 from '../assets/comida.png'
 import comida2 from '../assets/comida2.png'
 import comida3 from '../assets/comida3.png'
@@ -22,70 +14,22 @@ import saida from '../assets/sair.png'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+const slids = () => {
 
-import { useNavigate } from 'react-router-dom';
-
-const Home = () => {
-    const [user, setUser] = useState(null);
-    const navigate = useNavigate();
-
-   const handlelogout = async (e) =>{
-    e.preventDefault();
-    navigate('/');
-    setUser(null)
-
-   }
-
-   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  };
-
-  const filteredCards = cards.filter((card) =>
-  card.nome.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-);
-
-
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      };
+    
+      
   return (
     <div>
-       <nav>
-          <div className='alingcontainer'>
-              <img src={footerexport}/>
-              <div className='inpicon'>
-              <input
-                className='inp'
-                placeholder='Busque por pratos ou ingredientes'
-                value={this.state.searchTerm}
-                onChange={(e) => this.setState({ searchTerm: e.target.value })}
-              />
-
-              </div>
-              <button>Pedidos(0)</button>
-              <div className='imgclick'>
-                <img src={saida} onClick={handlelogout}/>
-              </div>
-          </div>
-       </nav>
-
-
-       <div className='containeraling'>
-          <div className='container'>
-               <div className='contcontainer'>
-                  <img src={logo2}/>
-                    <div>
-                    <h2>Sabores inigualáveis</h2>
-                  <p>Sinta o cuidado do preparo com ingredientes selecionados</p>
-                    </div>
-               </div>
-          </div>
-       </div>
-
-{/* salgados */}
+      {/* salgados */}
        
-       <div className='cardsaling'>
+      <div className='cardsaling'>
         <h2>Refeições </h2>
         <Slider {...settings} className='alingcards'>
           <div>
@@ -450,14 +394,8 @@ const Home = () => {
         </Slider>
       </div>
 
-      <footer>
-        <div className='alingfooter'>
-            <img src={food}/>
-            <h3>© 2023 - Todos os direitos reservados.</h3>
-        </div>
-      </footer>
     </div>
   )
 }
 
-export default Home
+export default slids

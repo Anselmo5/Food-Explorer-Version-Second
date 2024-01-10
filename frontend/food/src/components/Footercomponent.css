@@ -1,0 +1,19 @@
+footer{
+    width: 100vw;
+    background: #00111A;
+    position: absolute;
+    padding: 2px;
+  }
+
+
+  .alingfooter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  
+  .alingfooter h3{
+    color: #fff;
+    font-family: Roboto;
+  }
