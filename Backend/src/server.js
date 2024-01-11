@@ -12,6 +12,6 @@
     res.send('Hello')
  })
 
-app.listen(3000, () => {
+app.listen(3002, () => {
     console.log('server iniciado');
 })
