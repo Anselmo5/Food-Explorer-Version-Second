@@ -1,0 +1,76 @@
+{
+    "comidas": [
+      {
+        "id": 1,
+        "img":"",
+        "name": "Salada Ravanello",
+        "contex": "Rabanetes,folhas verdes e molho agridoce salpicados com gergelim",
+        "price": "49,97"
+      },
+      {
+        "id": 2,
+        "img":"",
+        "name": "Spaguetti Gambe",
+        "contex":"Massa fresca con camarões e pesto",
+        "price": "79,97"
+      },
+      {
+        "id": 3,
+        "img":"",
+        "name": "Torradas de Parma",
+        "contex" :"Presunto de parma e rúcula em um pão com fermentação natural",
+        "price": "25,97"
+      }
+    ],
+
+
+
+    "doces": [
+        {
+          "id": 1,
+          "img":"",
+          "name": "Prugna Pie ",
+          "contex": "Torta de ameixa com massa amanteigada,polvilho em açúcar.",
+          "price": "79,97"
+        },
+        {
+          "id": 2,
+          "img":"",
+          "name": "Peachy pastrie",
+          "contex" :"Delicioso folheado de pêssego com folhas de hortelã.",
+          "price": "32,97"
+        },
+        {
+          "id": 3,
+          "img":"",
+          "name": "Macarons",
+          "contex" :"Farinha de amêndoas, manteiga, claras e açúcar.",
+          "price": "79,97"
+        }
+      ],
+
+
+      "bebidas": [
+        {
+          "id": 1,
+          "img":"./assets/bebida1.png",
+          "name": "Espresso",
+          "contex": "Café cremoso feito na temperatura e pressões perfeitas",
+          "price": "25,97"
+        },
+        {
+          "id": 2,
+          "img":"./assets/bebida2.png",
+          "name": "Suco de maracujá",
+          "contex":"Suco de maracujá gelado, cremoso, docinho.",
+          "price": "13,97"
+        },
+        {
+          "id": 3,
+          "img":"./assets/bebida3.png",
+          "name": "Tè d'autunno ",
+          "contex" :"Chá de anis, canela e limão. Sinta o outono italiano.",
+          "price": " 19,97"
+        }
+      ]
+  } 

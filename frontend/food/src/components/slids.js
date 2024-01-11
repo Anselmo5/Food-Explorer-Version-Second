@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './slids.css'
 import comida1 from '../assets/comida.png'
 import comida2 from '../assets/comida2.png'
@@ -15,6 +15,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 const slids = () => {
+  const url ="http://localhost:3000/comidas" 
+  const url2 ="http://localhost:3000/doces"
+  const url3 = "http://localhost:3000/bebias"
 
     const settings = {
         dots: true,

@@ -4,7 +4,7 @@ import './home.css'
 import logo2 from '../assets/pngegg 1.png'
 import Slids from '../components/slids'
 import Footercomponent from '../components/Footercomponent'
-import Navcomponents from '../components/navcomponents' 
+import Navcomponents from '../components/Navcomponents' 
 
 const Home = () => {
 
