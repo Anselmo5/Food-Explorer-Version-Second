@@ -1,5 +1,5 @@
 .alingcards{
-    width: 90%; 
+    width: 90%;
   }
   
   .cardsaling{
@@ -19,7 +19,7 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    height: 462px;
+    height: 465px;
     background: var(--dark-dark-200, #00070A);
     border-radius: 5px;
     border: 1px solid var(--dark-dark-300, #000204);
@@ -41,7 +41,7 @@
   color: var(--tints-cake-200, #82F3FF);
   text-align: center;
   font-family: Roboto;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   }
   
   
@@ -49,7 +49,7 @@
     text-align: center;
     color: #fff;
     font-family: Poppins;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   
   /* coração-button */
@@ -60,7 +60,7 @@
     position: relative;
     width: 30px;
     height: 50px;
-    margin-bottom: 10px;
+    margin-top: 0;
     margin-left: 230px;
   }
   

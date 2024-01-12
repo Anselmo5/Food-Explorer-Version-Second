@@ -2,21 +2,21 @@
     "comidas": [
       {
         "id": 1,
-        "img":"",
+        "img":"./assets/comida1.png",
         "name": "Salada Ravanello",
         "contex": "Rabanetes,folhas verdes e molho agridoce salpicados com gergelim",
         "price": "49,97"
       },
       {
         "id": 2,
-        "img":"",
+        "img":"./assets/comida2.png",
         "name": "Spaguetti Gambe",
         "contex":"Massa fresca con camarões e pesto",
         "price": "79,97"
       },
       {
         "id": 3,
-        "img":"",
+        "img":"./assets/comida3.png",
         "name": "Torradas de Parma",
         "contex" :"Presunto de parma e rúcula em um pão com fermentação natural",
         "price": "25,97"
