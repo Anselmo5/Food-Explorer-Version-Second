@@ -1,0 +1,143 @@
+.alingcards{
+    width: 90%;
+  }
+  
+  .cardsaling{
+    margin-left:150px;
+  }
+  
+  .cardsaling h2{
+   color: #fff;
+   padding: 10px;
+   font-family: Poppins
+  }
+  
+  .formcards{
+    padding: 10px;
+    margin: 24px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    height: 465px;
+    background: var(--dark-dark-200, #00070A);
+    border-radius: 5px;
+    border: 1px solid var(--dark-dark-300, #000204);
+  }
+  
+  .formcards img{
+    width:160px;
+    margin-bottom: 3px;
+  }
+  
+  .formcards h3{
+    text-align: center;
+    color: #fff;
+    font-family: Poppins;
+    margin-bottom: 14px;
+  }
+  
+  .formcards h2{
+  color: var(--tints-cake-200, #82F3FF);
+  text-align: center;
+  font-family: Roboto;
+  margin-bottom: 20px;
+  }
+  
+  
+  .formcards p{
+    text-align: center;
+    color: #fff;
+    font-family: Poppins;
+    margin-bottom: 10px;
+  }
+  
+  /* coração-button */
+  
+  
+  .con-like {
+    --red: rgb(255, 50, 50);
+    position: relative;
+    width: 30px;
+    height: 50px;
+    margin-top: 0;
+    margin-left: 230px;
+  }
+  
+  .con-like .like {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+  
+  }
+  
+  .con-like .checkmark {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .con-like .outline,
+  .con-like .filled {
+    fill: var(--red);
+    position: absolute;
+  }
+  
+  .con-like .filled {
+    animation: kfr-filled 0.5s;
+    display: none;
+  }
+  
+  .con-like .celebrate {
+    position: absolute;
+    animation: kfr-celebrate 0.5s;
+    animation-fill-mode: forwards;
+    display: none;
+  }
+  
+  .con-like .poly {
+    stroke: var(--red);
+    fill: var(--red);
+  }
+  
+  .con-like .like:checked ~ .checkmark .filled {
+    display: block
+  }
+  
+  .con-like .like:checked ~ .checkmark .celebrate {
+    display: block
+  }
+  
+  @keyframes kfr-filled {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  
+  @keyframes kfr-celebrate {
+    0% {
+      transform: scale(0);
+    }
+  
+    50% {
+      opacity: 0.8;
+    }
+  
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+      display: none;
+    }
+  }
+  

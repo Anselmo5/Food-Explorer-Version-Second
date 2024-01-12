@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './slids.css'
+import './slidsbebidas.css'
 import comida1 from '../assets/comida.png'
 import comida2 from '../assets/comida2.png'
 import comida3 from '../assets/comida3.png'
@@ -15,12 +15,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Fecth from '../hooks/useFecth'
-import Slidsdoce from './slidsdoce'
-import Slidsbebidas from './slidsbebebidas'
-const slids = () => {
-  const url ="http://localhost:3000/comidas" 
+const slidsbebidas = () => { 
+  const url3 = "http://localhost:3000/bebidas"
 
-  const { data : items, httpConfig, loading, error } = Fecth(url)
+  const { data : items, httpConfig, loading, error } = Fecth(url3)
 
     const settings = {
         dots: true,
@@ -33,10 +31,10 @@ const slids = () => {
       
   return (
     <div>
-      {/* salgados */}
+
        
       <div className='cardsaling'>
-        <h2>Refeições </h2>
+      <h2>Bebidas </h2>
             {error && <p>{error}</p>}
             <div>
             <Slider {...settings} className='alingcards'>
@@ -69,7 +67,7 @@ const slids = () => {
                          </div>
                        </div>
                    <img src={comida7}/>
-                     
+                      <img src={comidas.img}/>
                       <h2>{comidas.name}</h2>
                       <p>{comidas.contex}</p>
                       <h2>{comidas.price}</h2>
@@ -80,12 +78,9 @@ const slids = () => {
              </Slider>
             </div>
       </div>
-      {/* doces */}
-        <Slidsdoce/>
-        {/* bebidas */}
-        <Slidsbebidas/>
+            
     </div>
   )
 }
 
-export default slids
+export default slidsbebidas
