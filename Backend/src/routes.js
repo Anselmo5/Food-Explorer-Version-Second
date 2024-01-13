@@ -58,6 +58,4 @@ routes.post('/create-user', (req, res) => {
   return res.status(201).json({ message: 'User created successfully', user: newUser });
 });
 
-// Restante do código...
-
 module.exports = routes;

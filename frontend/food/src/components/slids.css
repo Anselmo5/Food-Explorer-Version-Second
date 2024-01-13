@@ -113,6 +113,16 @@
     display: block
   }
   
+  /* alterar numero */
+
+  .alingadicionar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  /* responsividade */
   @keyframes kfr-filled {
     0% {
       opacity: 0;

@@ -22,11 +22,30 @@ const slids = () => {
 
   const { data : items, httpConfig, loading, error } = Fecth(url)
 
+  const [numeros, setNumeros] = useState({});
+
+  const aumentarNumero = (id) => {
+    setNumeros((prevNumeros) => ({
+      ...prevNumeros,
+      [id]: (prevNumeros[id] || 1) + 1,
+    }));
+  };
+
+  const diminuirNumero = (id) => {
+    if (numeros[id] > 1) {
+      setNumeros((prevNumeros) => ({
+        ...prevNumeros,
+        [id]: prevNumeros[id] - 1,
+      }));
+    }
+  };
+
+
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1
       };
     
@@ -73,6 +92,12 @@ const slids = () => {
                       <h2>{comidas.name}</h2>
                       <p>{comidas.contex}</p>
                       <h2>{comidas.price}</h2>
+
+                      <div className='alingadicionar'>
+                        <button onClick={() => diminuirNumero(comidas.id)}>-</button>
+                        <h2>{numeros[comidas.id] || 1}</h2>
+                        <button onClick={() => aumentarNumero(comidas.id)}> + </button>
+                      </div>
                    </div>
                    </div>
                   </div>

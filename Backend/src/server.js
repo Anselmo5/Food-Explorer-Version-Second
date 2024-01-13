@@ -3,7 +3,6 @@
  const cors = require('cors')
  const app = express()
 
-
  app.use(express.json())
  app.use(cors())
  app.use(routes)
@@ -12,6 +11,6 @@
     res.send('Hello')
  })
 
-app.listen(3002, () => {
+app.listen(3003, () => {
     console.log('server iniciado');
 })
