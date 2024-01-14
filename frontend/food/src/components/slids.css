@@ -13,13 +13,14 @@
   }
   
   .formcards{
-    padding: 10px;
+    padding: 4px;
     margin: 24px;
     display: flex;
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    height: 465px;
+    height: 78vh;
+    width: auto;
     background: var(--dark-dark-200, #00070A);
     border-radius: 5px;
     border: 1px solid var(--dark-dark-300, #000204);
@@ -27,21 +28,20 @@
   
   .formcards img{
     width:160px;
-    margin-bottom: 3px;
   }
   
   .formcards h3{
     text-align: center;
     color: #fff;
     font-family: Poppins;
-    margin-bottom: 14px;
+
   }
   
   .formcards h2{
   color: var(--tints-cake-200, #82F3FF);
   text-align: center;
   font-family: Roboto;
-  margin-bottom: 20px;
+
   }
   
   
@@ -49,18 +49,29 @@
     text-align: center;
     color: #fff;
     font-family: Poppins;
-    margin-bottom: 10px;
   }
-  
+
+  /*botão de incluir  */
+
+  .incluir button{
+    padding: 12px 24px;
+    background: #750310;
+    border-radius:5px ;
+    color: #ffffff;
+    border: none;
+    margin: 5px;
+  }
+
+
   /* coração-button */
   
   
   .con-like {
     --red: rgb(255, 50, 50);
     position: relative;
-    width: 30px;
-    height: 50px;
-    margin-top: 0;
+    width: 20px;
+    height: 10px;
+    margin-top: 5vh;
     margin-left: 230px;
   }
   
@@ -120,6 +131,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: row;
+
+  }
+
+  .adicionar{
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #ffffff;
   }
 
   /* responsividade */

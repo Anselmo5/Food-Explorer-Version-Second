@@ -1,28 +1,20 @@
-import React, { useState } from 'react'
+
 import './slids.css'
-import comida1 from '../assets/comida.png'
-import comida2 from '../assets/comida2.png'
-import comida3 from '../assets/comida3.png'
-import comida4 from '../assets/comida4.png'
-import comida5 from '../assets/comida5.png'
-import comida6  from '../assets/comida6.png'
 import comida7  from '../assets/comida7.png'
-import bebida3 from '../assets/bebida1.png'
-import bebida2 from '../assets/bebida2.png'
-import bebida1 from '../assets/bebida3.png'
-import saida from '../assets/sair.png'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Fecth from '../hooks/useFecth'
 import Slidsdoce from './slidsdoce'
 import Slidsbebidas from './slidsbebebidas'
-const slids = () => {
+import React, { useState } from 'react';
+const Slids = () => {
+  
   const url ="http://localhost:3000/comidas" 
 
   const { data : items, httpConfig, loading, error } = Fecth(url)
 
-  const [numeros, setNumeros] = useState({});
+  const [numeros,setNumeros] = useState({});
 
   const aumentarNumero = (id) => {
     setNumeros((prevNumeros) => ({
@@ -87,16 +79,20 @@ const slids = () => {
                            </div>
                          </div>
                        </div>
-                   <img src={comida7}/>
+                   <img src={comidas.img}/>
                      
                       <h2>{comidas.name}</h2>
                       <p>{comidas.contex}</p>
                       <h2>{comidas.price}</h2>
 
                       <div className='alingadicionar'>
-                        <button onClick={() => diminuirNumero(comidas.id)}>-</button>
+                        <button className='adicionar' onClick={() => diminuirNumero(comidas.id)}>-</button>
                         <h2>{numeros[comidas.id] || 1}</h2>
-                        <button onClick={() => aumentarNumero(comidas.id)}> + </button>
+                        <button  className='adicionar' onClick={() => aumentarNumero(comidas.id)}> + </button>
+
+                          <div className='incluir'>
+                            <button>incluir</button>  
+                          </div>                        
                       </div>
                    </div>
                    </div>
@@ -113,4 +109,4 @@ const slids = () => {
   )
 }
 
-export default slids
+export default Slids

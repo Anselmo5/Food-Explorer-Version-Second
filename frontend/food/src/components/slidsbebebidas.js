@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './slidsbebidas.css'
+import './slids.css'
 import comida1 from '../assets/comida.png'
 import comida2 from '../assets/comida2.png'
 import comida3 from '../assets/comida3.png'
@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Fecth from '../hooks/useFecth'
-const slidsbebidas = () => { 
+const Slidsbebidas = () => { 
   const url3 = "http://localhost:3000/bebidas"
 
   const { data : items, httpConfig, loading, error } = Fecth(url3)
@@ -24,8 +24,26 @@ const slidsbebidas = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1
+      };
+
+      const [numeros,setNumeros] = useState({});
+
+      const aumentarNumero = (id) => {
+        setNumeros((prevNumeros) => ({
+          ...prevNumeros,
+          [id]: (prevNumeros[id] || 1) + 1,
+        }));
+      };
+    
+      const diminuirNumero = (id) => {
+        if (numeros[id] > 1) {
+          setNumeros((prevNumeros) => ({
+            ...prevNumeros,
+            [id]: prevNumeros[id] - 1,
+          }));
+        }
       };
     
       
@@ -71,6 +89,17 @@ const slidsbebidas = () => {
                       <h2>{comidas.name}</h2>
                       <p>{comidas.contex}</p>
                       <h2>{comidas.price}</h2>
+
+               
+                      <div className='alingadicionar'>
+                        <button className='adicionar' onClick={() => diminuirNumero(comidas.id)}>-</button>
+                        <h2>{numeros[comidas.id] || 1}</h2>
+                        <button  className='adicionar' onClick={() => aumentarNumero(comidas.id)}> + </button>
+
+                          <div className='incluir'>
+                            <button>incluir</button>  
+                          </div>                        
+                      </div>
                    </div>
                    </div>
                   </div>
@@ -83,4 +112,4 @@ const slidsbebidas = () => {
   )
 }
 
-export default slidsbebidas
+export default Slidsbebidas

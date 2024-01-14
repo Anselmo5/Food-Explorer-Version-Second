@@ -23,6 +23,7 @@ nav{
   .alingcontainer input {
     padding: 12px 14px;
     border-radius: 3px;
+    border: none;
     margin-top: 2px;
     width: 500px; /* Largura inicial */
     background: #0D1D25;
@@ -42,7 +43,7 @@ nav{
     margin: 5px;
     background: #750310;
     color: #fff;
-    
+    border: none;
   }
   
   .inpicon{
